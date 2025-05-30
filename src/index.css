@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme default {
+  --color-primary-900: hsl(227, 75%, 14%);
+  --color-primary-800: hsl(226, 25%, 17%);
+  --color-primary-700: hsl(225, 23%, 24%);
+  --color-primary-600: hsl(226, 11%, 37%);
+  --color-primary-300: hsl(0, 0%, 78%);
+  --color-primary-200: hsl(217, 61%, 90%);
+  --color-primary-100: hsl(0, 0%, 93%);
+  --color-primary-0: hsl(200, 60%, 99%);
+
+  --color-secondary-400: hsl(3, 86%, 64%);
+  --color-secondary-500: hsl(3, 71%, 56%);
+  --color-secondary-700: hsl(3, 77%, 44%);
+
+  --bg-light-gradient: 180deg, #ebf2fc 0%, #eef8f9 100%;
+  --bg-dark-gradient: 180deg, #040918 0%, #091540 100%;
+
+  --font-Noto: 'Noto Sans', sans-serif;
+  --font-size: 16px;
+  --font-normal-400: 400;
+  --font-medium-500: 500;
+  --font-bold-700: 700;
+}
+
+@theme dark {
+  --color-primary-900: hsl(200, 60%, 99%);
+}
+
+html {
+  font-family: var(--font-Noto);
+  font-size: var(--font-size);
+  font-weight: var(--font-normal);
+}
