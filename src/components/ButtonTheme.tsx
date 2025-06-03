@@ -31,7 +31,13 @@ const ButtonTheme: React.FC<IProps> = ({ theme, toggleTheme }) => {
       className="p-2 bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-0 rounded-lg"
       onClick={toggleTheme}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        fill="none"
+        viewBox="0 0 22 22"
+      >
         <g clip-path="url(#a)">{theme === 'light' ? svgMoon : svgSun}</g>
         <defs>
           <clipPath id="a">
