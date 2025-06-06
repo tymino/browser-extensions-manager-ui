@@ -2,9 +2,12 @@ import useTheme from './hooks/useTheme'
 
 import ButtonTheme from './components/ButtonTheme'
 import Logo from './components/Logo'
+import Button from './components/Button'
+import { useSortedButtons } from './hooks/useSortedButtons'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
+  const { buttons, activeButton, handleClick } = useSortedButtons()
 
   return (
     <div className="h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient) ">
@@ -15,12 +18,21 @@ const App = () => {
         </div>
 
         <div className="flex justify-between">
-          <p>extensions list</p>
+          <p className="text-3xl capitalize font-Noto font-bold text-primary-800 dark:text-primary-0">
+            extensions list
+          </p>
 
-          <div>
-            <button>all</button>
-            <button>active</button>
-            <button>inactive</button>
+          <div className="flex gap-2">
+            {buttons.map(({ id, variant, name }) => (
+              <Button
+                key={id}
+                variant={variant}
+                isActive={id === activeButton}
+                onClick={() => handleClick(id)}
+              >
+                {name}
+              </Button>
+            ))}
           </div>
         </div>
 
@@ -42,5 +54,4 @@ const App = () => {
     </div>
   )
 }
-
 export default App
