@@ -12,12 +12,12 @@ const App = () => {
   return (
     <div className="h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient) ">
       <div className="flex flex-col max-w-7xl h-full p-4 mx-auto">
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-5 p-2 rounded-xl bg-primary-0 dark:bg-primary-700">
           <Logo />
           <ButtonTheme theme={theme} toggleTheme={toggleTheme} />
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between my-7">
           <p className="text-3xl capitalize font-Noto font-bold text-primary-800 dark:text-primary-0">
             extensions list
           </p>

@@ -28,7 +28,7 @@ const svgMoon = (
 const ButtonTheme: React.FC<IProps> = ({ theme, toggleTheme }) => {
   return (
     <button
-      className="p-2 bg-primary-100 hover:bg-primary-200 text-primary-800 dark:bg-primary-800 dark:hover:bg-primary-700 dark:text-primary-0 rounded-lg focus:outline-secondary-500 focus:outline-2 focus:outline-offset-2"
+      className="p-2 bg-primary-100 hover:bg-primary-300 text-primary-800 dark:bg-primary-800 dark:hover:bg-primary-600 dark:text-primary-0 rounded-lg focus:outline-secondary-500 focus:outline-2 focus:outline-offset-2 cursor-pointer"
       onClick={toggleTheme}
     >
       <svg
