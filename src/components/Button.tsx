@@ -4,7 +4,7 @@ interface ButtonProps {
   children: React.ReactNode
   variant?: 'primary' | 'secondary'
   onClick?: () => void
-  isActive: boolean
+  isActive?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({

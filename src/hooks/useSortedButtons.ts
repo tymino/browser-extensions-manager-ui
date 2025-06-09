@@ -7,15 +7,15 @@ interface Button {
 }
 
 const buttons: Button[] = [
-  { id: 1, name: 'all', variant: 'primary' },
+  { id: 0, name: 'all', variant: 'primary' },
   {
-    id: 2,
+    id: 1,
     name: 'active',
     variant: 'primary',
   },
   {
-    id: 3,
-    name: 'completed',
+    id: 2,
+    name: 'inactive',
     variant: 'primary',
   },
 ]
