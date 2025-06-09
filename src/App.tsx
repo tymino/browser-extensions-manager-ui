@@ -8,10 +8,10 @@ import Card from './components/Card'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
-  const { extensionsList, buttons, activeButton, handleClick } =
+  const { sortedExtensionsList, buttons, activeButton, handleClick } =
     useExtensionsList()
 
-  console.log(extensionsList)
+  console.log(sortedExtensionsList)
 
   const handleRemove = () => console.log('click remove')
   const handleToggle = () => console.log('click toggle')
@@ -44,7 +44,7 @@ const App = () => {
         </div>
 
         <div className="grid grid-cols-3 grid-rows-4 gap-4">
-          {extensionsList.map(({ logo, name, description, isActive }) => (
+          {sortedExtensionsList.map(({ logo, name, description, isActive }) => (
             <Card
               key={name}
               title={name}

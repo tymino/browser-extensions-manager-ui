@@ -20,8 +20,10 @@ const Toggle: React.FC<ToggleProps> = ({ onChange, checked = false }) => {
         role="switch"
         aria-checked={isChecked}
         onClick={handleToggle}
-        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-          isChecked ? 'bg-indigo-600' : 'bg-gray-200'
+        className={`relative inline-flex h-6 w-11 items-center rounded-full focus:outline-2 focus:outline-offset-2 focus:outline-secondary-500 cursor-pointer ${
+          isChecked
+            ? 'bg-secondary-700 dark:bg-secondary-500'
+            : 'bg-primary-300 dark:bg-primary-600'
         }`}
       >
         <span

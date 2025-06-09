@@ -1,44 +1,33 @@
 import { useState, useEffect } from 'react'
-import { useSortedButtons } from './useSortedButtons'
 
-interface IExtension {
-  logo: string
-  name: string
-  description: string
-  isActive: boolean
-}
+import { useSortedButtons } from './useSortedButtons'
+import { extensionData } from '../extData'
+
+import type { IExtension } from '../extData'
 
 export const useExtensionsList = () => {
-  const [extensionsList, setExtensionsList] = useState<IExtension[]>([])
   const { buttons, activeButton, handleClick } = useSortedButtons()
 
+  const [extensionsList, setExtensionsList] = useState(extensionData)
+  const [sortedExtensionsList, setSortedExtensionsList] = useState<
+    IExtension[]
+  >([])
+
+  const handleToggleExt = () => {}
+  const handleRemoveExt = () => {}
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/data.json')
-        const jsonData = await response.json()
-
-        switch (activeButton) {
-          case 1:
-            setExtensionsList(
-              jsonData.filter((ext: IExtension) => ext.isActive),
-            )
-            break
-          case 2:
-            setExtensionsList(
-              jsonData.filter((ext: IExtension) => !ext.isActive),
-            )
-            break
-          default:
-            setExtensionsList(jsonData)
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
+    switch (activeButton) {
+      case 1:
+        setSortedExtensionsList(extensionsList.filter((ext) => ext.isActive))
+        break
+      case 2:
+        setSortedExtensionsList(extensionsList.filter((ext) => !ext.isActive))
+        break
+      default:
+        setSortedExtensionsList(extensionsList)
     }
+  }, [activeButton, extensionsList])
 
-    fetchData()
-  }, [activeButton])
-
-  return { extensionsList, buttons, activeButton, handleClick }
+  return { sortedExtensionsList, buttons, activeButton, handleClick }
 }
