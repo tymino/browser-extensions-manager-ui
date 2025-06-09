@@ -3,11 +3,14 @@ import useTheme from './hooks/useTheme'
 import ButtonTheme from './components/ButtonTheme'
 import Logo from './components/Logo'
 import Button from './components/Button'
-import { useSortedButtons } from './hooks/useSortedButtons'
+import { useExtensionsList } from './hooks/useExtensionsList'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
-  const { buttons, activeButton, handleClick } = useSortedButtons()
+  const { extensionsList, buttons, activeButton, handleClick } =
+    useExtensionsList()
+
+  console.log(extensionsList)
 
   return (
     <div className="h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient) ">
