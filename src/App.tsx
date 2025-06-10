@@ -26,7 +26,7 @@ const App = () => {
         </div>
 
         <div className="flex justify-between my-7">
-          <p className="text-3xl capitalize font-Noto font-bold text-primary-800 dark:text-primary-0">
+          <p className="text-3xl capitalize font-bold text-primary-800 dark:text-primary-0">
             extensions list ({sortedExtensionsList.length})
           </p>
 

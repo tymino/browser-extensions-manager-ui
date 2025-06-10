@@ -24,15 +24,19 @@ const Card: React.FC<CardProps> = ({
   const handleChange = () => onToggle(title)
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-col justify-between p-4 bg-primary-0 border border-primary-0 rounded-xl shadow-sm dark:border-primary-600 dark:bg-primary-700">
+      <div className="flex">
         <img src={logo} alt="ex-icon" />
-        <div>
-          <h3>{title}</h3>
-          <p>{description}</p>
+        <div className="ml-3">
+          <h3 className="text-xl capitalize font-bold text-primary-800 dark:text-primary-0">
+            {title}
+          </h3>
+          <p className="text-base capitalize font-normal text-primary-600 dark:text-primary-300">
+            {description}
+          </p>
         </div>
       </div>
-      <div>
+      <div className="flex justify-between">
         <Button variant="secondary" onClick={handleRemove}>
           remove
         </Button>
