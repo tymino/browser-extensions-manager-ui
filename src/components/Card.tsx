@@ -8,8 +8,8 @@ interface CardProps {
   description: string
   logo: string
   isActive: boolean
-  onToggle: () => void
-  onRemove: () => void
+  onToggle: (name: string) => void
+  onRemove: (name: string) => void
 }
 
 const Card: React.FC<CardProps> = ({
@@ -20,6 +20,9 @@ const Card: React.FC<CardProps> = ({
   onToggle,
   onRemove,
 }) => {
+  const handleRemove = () => onRemove(title)
+  const handleChange = () => onToggle(title)
+
   return (
     <div>
       <div>
@@ -30,10 +33,10 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
       <div>
-        <Button variant="secondary" onClick={onRemove}>
+        <Button variant="secondary" onClick={handleRemove}>
           remove
         </Button>
-        <Toggle checked={isActive} onChange={onToggle} />
+        <Toggle checked={isActive} onChange={handleChange} />
       </div>
     </div>
   )

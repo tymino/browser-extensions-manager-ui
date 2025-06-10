@@ -8,13 +8,14 @@ import Card from './components/Card'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
-  const { sortedExtensionsList, buttons, activeButton, handleClick } =
-    useExtensionsList()
-
-  console.log(sortedExtensionsList)
-
-  const handleRemove = () => console.log('click remove')
-  const handleToggle = () => console.log('click toggle')
+  const {
+    sortedExtensionsList,
+    buttons,
+    activeButton,
+    handleClickSortButton,
+    handleToggleExt,
+    handleRemoveExt,
+  } = useExtensionsList()
 
   return (
     <div className="h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient) ">
@@ -26,7 +27,7 @@ const App = () => {
 
         <div className="flex justify-between my-7">
           <p className="text-3xl capitalize font-Noto font-bold text-primary-800 dark:text-primary-0">
-            extensions list
+            extensions list ({sortedExtensionsList.length})
           </p>
 
           <div className="flex gap-2">
@@ -35,7 +36,7 @@ const App = () => {
                 key={id}
                 variant={variant}
                 isActive={id === activeButton}
-                onClick={() => handleClick(id)}
+                onClick={() => handleClickSortButton(id)}
               >
                 {name}
               </Button>
@@ -51,22 +52,10 @@ const App = () => {
               description={description}
               logo={logo}
               isActive={isActive}
-              onToggle={handleToggle}
-              onRemove={handleRemove}
+              onToggle={handleToggleExt}
+              onRemove={handleRemoveExt}
             />
           ))}
-          {/* <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div>
-          <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div>
-          <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div>
-          <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div>
-          <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div>
-          <div className="bg-amber-600">a</div>
-          <div className="bg-blue-500">a</div> */}
         </div>
       </div>
     </div>

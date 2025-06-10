@@ -21,11 +21,11 @@ const buttons: Button[] = [
 ]
 
 export const useSortedButtons = () => {
-  const [activeButton, setActiveButton] = useState(1)
+  const [activeButton, setActiveButton] = useState(0)
 
-  const handleClick = (id: number) => {
+  const handleClickSortButton = (id: number) => {
     setActiveButton(id)
   }
 
-  return { buttons, activeButton, handleClick }
+  return { buttons, activeButton, handleClickSortButton }
 }
