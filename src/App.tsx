@@ -18,19 +18,19 @@ const App = () => {
   } = useExtensionsList()
 
   return (
-    <div className="h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient) ">
-      <div className="flex flex-col max-w-7xl h-full p-4 mx-auto">
+    <div className="min-h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient)">
+      <div className="flex flex-col max-w-screen-xl p-4 mx-auto ">
         <div className="flex justify-between mt-5 p-2 rounded-xl bg-primary-0 dark:bg-primary-700">
           <Logo />
           <ButtonTheme theme={theme} toggleTheme={toggleTheme} />
         </div>
 
-        <div className="flex justify-between my-7">
+        <div className="flex flex-col items-center sm:flex-row justify-between my-7">
           <p className="text-3xl capitalize font-bold text-primary-800 dark:text-primary-0">
             extensions list ({sortedExtensionsList.length})
           </p>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-3 sm:mt-0">
             {buttons.map(({ id, variant, name }) => (
               <Button
                 key={id}
@@ -44,7 +44,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 grid-rows-4 gap-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {sortedExtensionsList.map(({ logo, name, description, isActive }) => (
             <Card
               key={name}

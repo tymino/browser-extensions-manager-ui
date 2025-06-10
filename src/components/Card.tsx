@@ -24,8 +24,8 @@ const Card: React.FC<CardProps> = ({
   const handleChange = () => onToggle(title)
 
   return (
-    <div className="flex flex-col justify-between p-4 bg-primary-0 border border-primary-0 rounded-xl shadow-sm dark:border-primary-600 dark:bg-primary-700">
-      <div className="flex">
+    <div className="flex flex-col justify-between px-4 py-3 bg-primary-0 border border-primary-0 rounded-xl shadow-sm dark:border-primary-600 dark:bg-primary-700">
+      <div className="flex items-start mb-6">
         <img src={logo} alt="ex-icon" />
         <div className="ml-3">
           <h3 className="text-xl capitalize font-bold text-primary-800 dark:text-primary-0">
