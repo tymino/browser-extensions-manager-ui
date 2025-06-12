@@ -28,7 +28,7 @@ const svgMoon = (
 const ButtonTheme: React.FC<IProps> = ({ theme, toggleTheme }) => {
   return (
     <button
-      className="p-2 bg-primary-100 hover:bg-primary-300 text-primary-800 dark:bg-primary-800 dark:hover:bg-primary-600 dark:text-primary-0 rounded-lg focus:outline-secondary-500 focus:outline-2 focus:outline-offset-2 cursor-pointer"
+      className="p-2 rounded-lg bg-primary-100 text-primary-800 cursor-pointer hover:bg-primary-300 focus:outline-2 focus:outline-offset-2 focus:outline-secondary-500 dark:bg-primary-800 dark:text-primary-0 dark:hover:bg-primary-600"
       onClick={toggleTheme}
     >
       <svg
@@ -39,11 +39,6 @@ const ButtonTheme: React.FC<IProps> = ({ theme, toggleTheme }) => {
         viewBox="0 0 22 22"
       >
         <g clipPath="url(#a)">{theme === 'light' ? svgMoon : svgSun}</g>
-        <defs>
-          <clipPath id="a">
-            <path fill="#fff" d="M0 0h22v22H0z" />
-          </clipPath>
-        </defs>
       </svg>
     </button>
   )

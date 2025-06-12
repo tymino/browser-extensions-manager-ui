@@ -3,7 +3,7 @@ import React from 'react'
 import Button from './Button'
 import Toggle from './Toggle'
 
-interface CardProps {
+interface IProps {
   title: string
   description: string
   logo: string
@@ -12,7 +12,7 @@ interface CardProps {
   onRemove: (name: string) => void
 }
 
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<IProps> = ({
   title,
   description,
   logo,
@@ -28,10 +28,10 @@ const Card: React.FC<CardProps> = ({
       <div className="flex items-start mb-6">
         <img src={logo} alt="ex-icon" />
         <div className="ml-3">
-          <h3 className="text-xl capitalize font-bold text-primary-800 dark:text-primary-0">
+          <h3 className="text-primary-800 text-xl font-bold capitalize dark:text-primary-0">
             {title}
           </h3>
-          <p className="text-base capitalize font-normal text-primary-600 dark:text-primary-300">
+          <p className="text-primary-600 text-base font-normal capitalize dark:text-primary-300">
             {description}
           </p>
         </div>

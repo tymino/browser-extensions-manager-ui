@@ -1,13 +1,13 @@
 import React from 'react'
 
-interface LinkProps {
+interface IProps {
   name: string
   href: string
 }
 
-const Link: React.FC<LinkProps> = ({ name, href }) => {
+const Link: React.FC<IProps> = ({ name, href }) => {
   return (
-    <a href={href} className="text-red-600 hover:text-blue-700 underline">
+    <a href={href} className="text-red-600 underline hover:text-blue-700">
       {name}
     </a>
   )

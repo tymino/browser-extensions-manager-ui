@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-interface Button {
+interface IButton {
   id: number
   name: string
   variant: 'primary' | 'secondary'
 }
 
-const buttons: Button[] = [
+const buttons: IButton[] = [
   { id: 0, name: 'all', variant: 'primary' },
   {
     id: 1,

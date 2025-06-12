@@ -1,10 +1,10 @@
-import useTheme from './hooks/useTheme'
-
-import ButtonTheme from './components/ButtonTheme'
 import Logo from './components/Logo'
+import ButtonTheme from './components/ButtonTheme'
 import Button from './components/Button'
-import { useExtensionsList } from './hooks/useExtensionsList'
 import Card from './components/Card'
+
+import useTheme from './hooks/useTheme'
+import { useExtensionsList } from './hooks/useExtensionsList'
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -19,14 +19,14 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-linear-(--bg-light-gradient) dark:bg-linear-(--bg-dark-gradient)">
-      <div className="flex flex-col max-w-screen-xl p-4 mx-auto ">
-        <div className="flex justify-between mt-5 p-2 rounded-xl bg-primary-0 dark:bg-primary-700">
+      <div className="flex flex-col max-w-screen-xl mx-auto p-4">
+        <div className="flex justify-between mt-5 p-2 bg-primary-0 rounded-xl dark:bg-primary-700">
           <Logo />
           <ButtonTheme theme={theme} toggleTheme={toggleTheme} />
         </div>
 
-        <div className="flex flex-col items-center sm:flex-row justify-between my-7">
-          <p className="text-3xl capitalize font-bold text-primary-800 dark:text-primary-0">
+        <div className="flex flex-col justify-between items-center my-7 sm:flex-row">
+          <p className="text-primary-800 text-3xl font-bold capitalize dark:text-primary-0">
             extensions list ({sortedExtensionsList.length})
           </p>
 
@@ -44,7 +44,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {sortedExtensionsList.map(({ logo, name, description, isActive }) => (
             <Card
               key={name}
